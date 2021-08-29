@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import {Row, Col } from 'reactstrap';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export default function Home() {
+
+  const [isConnected, setIsConnected] = useState(false);
+  const [connectButtonText, setConnectButtonText] = useState("Connect");
 
   async function preflightUtils() {
     const isPhantomInstalled = window.solana && window.solana.isPhantom;
@@ -20,9 +22,16 @@ export default function Home() {
 
   async function connectPhantom() {
     await window.solana.connect();
-    const publicAddress = window.solana.publicKey.toString();
-    console.log("Public key: ", publicAddress);
+    await setIsConnected(true);
+    let publicAddress = window.solana.publicKey.toString();
+    let truncatedAddress = publicAddress.substring(0,3);
+    truncatedAddress = truncatedAddress + "..";
+    let lastFewChars = publicAddress.substr(-2);
+    truncatedAddress = truncatedAddress + lastFewChars;
+    setConnectButtonText(truncatedAddress);
   }
+
+
 
   useEffect(() => {
     async function performPreflight() {
@@ -30,7 +39,7 @@ export default function Home() {
     }
 
     performPreflight();
-  },[]);
+  },[isConnected]);
 
 
   return (
@@ -42,16 +51,16 @@ export default function Home() {
       </Head>
 
       <div className = {styles.navBar}>
-        <div sm = "4" className = {styles.navColumnOne}>
+        <div className = {styles.navColumnOne}>
           <div className = {styles.solventLogo}>
             <Image src = "/logomark_teal.png" alt="Solvent Protocol logo" width = {30} height = {40}/>
           </div>
         </div>
-        <div sm = "4" className = {styles.navColumnTwo}>
+        <div className = {styles.navColumnTwo}>
           <button className = {styles.createButton}>Create</button>
           <button className = {styles.mintButton}>Mint</button>
         </div>
-        <div sm = "4" className = {styles.navColumnThree}>
+        <div className = {styles.navColumnThree}>
           <button 
             className = {styles.connectButton}
             onClick = {
@@ -60,7 +69,7 @@ export default function Home() {
               }
             }
           >
-            Connect
+            {connectButtonText}
           </button>
 
         </div>
