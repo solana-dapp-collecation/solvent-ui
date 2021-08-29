@@ -2,9 +2,37 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {Row, Col } from 'reactstrap';
+import { useEffect } from 'react';
 
 
 export default function Home() {
+
+  async function preflightUtils() {
+    const isPhantomInstalled = window.solana && window.solana.isPhantom;
+    console.log("isPhantomInstalled: ", isPhantomInstalled);
+
+    if(isPhantomInstalled) {
+      window.solana.on("connect", () => {
+        console.log("Connected to Phantom");
+      });
+    }
+  }
+
+  async function connectPhantom() {
+    await window.solana.connect();
+    const publicAddress = window.solana.publicKey.toString();
+    console.log("Public key: ", publicAddress);
+  }
+
+  useEffect(() => {
+    async function performPreflight() {
+      await preflightUtils();
+    }
+
+    performPreflight();
+  },[]);
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +52,16 @@ export default function Home() {
           <button className = {styles.mintButton}>Mint</button>
         </div>
         <div sm = "4" className = {styles.navColumnThree}>
-          <button className = {styles.connectButton}>Connect</button>
+          <button 
+            className = {styles.connectButton}
+            onClick = {
+              () => {
+                connectPhantom();
+              }
+            }
+          >
+            Connect
+          </button>
 
         </div>
       </div>
