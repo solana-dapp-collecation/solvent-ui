@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react';
-
+import CreateBucket from '../components/CreateBucket/CreateBucket';
+import { useRouter } from 'next/router'
 
 export default function Home() {
 
@@ -10,7 +11,7 @@ export default function Home() {
   const [connectButtonText, setConnectButtonText] = useState("Connect");
   const [mainContentViewIdentifier, setMainContentViewIdentifier] = useState(0);
   const [mainContentView, setMainContentView] = useState(<></>);
-
+  const router = useRouter();
 
   async function preflightUtils() {
     const isPhantomInstalled = window.solana && window.solana.isPhantom;
@@ -45,7 +46,7 @@ export default function Home() {
         setMainContentView(<div className = {styles.base}>0</div>);
         break;
       case 1:
-        setMainContentView(<div className = {styles.base}>1</div>);
+        setMainContentView(<CreateBucket />);
         break;
       case 2:
         setMainContentView(<div className = {styles.base}>2</div>);
@@ -54,18 +55,11 @@ export default function Home() {
         setMainContentView(<div className = {styles.base}>None</div>);
 
     }
-  } 
-
-  async function fetchUpdatedBuckets() {
-    
   }
-
-
 
 
   useEffect(() => {
     async function performPreflight() {
-      await fetchUpdatedBuckets();
       await switchMainContentViewFromIdentifier();
       await preflightUtils();
     }
@@ -84,7 +78,14 @@ export default function Home() {
 
       <div className = {styles.navBar}>
         <div className = {styles.navColumnOne}>
-          <div className = {styles.solventLogo}>
+          <div 
+            className = {styles.solventLogo}
+            onClick = {
+              () => {
+                window.location.reload()
+              }
+            }
+          >
             <Image src = "/logomark_teal.png" alt="Solvent Protocol logo" width = {30} height = {40}/>
           </div>
         </div>
@@ -136,7 +137,7 @@ export default function Home() {
       <footer className={styles.footer}>
           Powered by{'  '}
           <span className={styles.logo}>
-            <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={10} />
+            <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={12} />
           </span>
       </footer>
     </div>
