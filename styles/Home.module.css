@@ -1,36 +1,172 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
 .navBar {
+  margin-top: 2vh;
   width: 100vw;
-  height: max(50px, 12vh);
-  border-bottom: 1px solid #eaeaea;
+  height: max(50px, 6vh);
+  display: flex;
+  flex-direction: row;
+  /* background-color: #e33d3d; */
+}
+
+.navColumnOne {
+  display: flex;
+  flex-direction: row;
+  /* background-color: blue; */
+}
+
+.solventLogo {
+  margin-left: 15px;
+}
+
+
+
+.navColumnTwo {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  /* background-color: yellow; */
+}
+
+.navColumnThree {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* background-color: red; */
+}
+
+.createButton {
+  width: 80px;
+  height: 35px;
+  margin-left: 2vw;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  color: #00f99f;
+  border: solid 1px transparent;
+  background-image: linear-gradient(#00f99f, #00f99f), linear-gradient(101deg, #00f99f, #00f99f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #111 inset;
+}
+
+.createButton:hover {
+  box-shadow: none;
+  color: #111;
+}
+
+.mintButton {
+  width: 80px;
+  height: 35px;
+  margin-left: 2vw;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  color: #00f99f;
+  border: solid 1px transparent;
+  background-image: linear-gradient(#00f99f, #00f99f), linear-gradient(101deg, #00f99f, #00f99f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #111 inset;
+}
+
+.mintButton:hover {
+  box-shadow: none;
+  color: #111;
+}
+
+.connectButton {
+  width: 80px;
+  height: 35px;
+  margin-right: 2vw;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  color: #00f99f;
+  border: solid 1px transparent;
+  background-image: linear-gradient(#00f99f, #00f99f), linear-gradient(101deg, #00f99f, #00f99f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #111 inset;
+}
+
+.connectButton:hover {
+  box-shadow: none;
+  color: #111;
 }
 
 .mainContent {
   width: 100vw;
   height: 80vh;
+  /* background-color: red; */
 }
 
 .footer {
   width: 100vw;
-  height: max(40px, 8vh);
+  height: max(25px, 4vh);
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eaeaea;
+  /* background-color: yellow; */
 }
 
 
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+
+@media (max-width: 500px) {
+  .navBar {
+    flex-direction: column;
+  }
+
+  .navColumnOne {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navColumnTwo {
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .navColumnThree {
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+  }
+
+  .createButton {
+    margin-left: 0vw;
+    margin-top: 1vh;
+  }
+
+  .mintButton {
+    margin-left: 0vw;
+    margin-top: 1vh;
+
+  }
+
+  .connectButton {
+    margin-right: 0vw;
+    margin-top: 1vh;
+
+  }
+
 }
