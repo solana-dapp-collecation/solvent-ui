@@ -8,33 +8,46 @@ export default function Home() {
 
   const [isConnected, setIsConnected] = useState(false);
   const [connectButtonText, setConnectButtonText] = useState("Connect");
-
+  const [mainContentView, setMainContentView] = useState(<div className = {styles.mainContentView}>Nothing found here</div>)
+  
+  
   async function preflightUtils() {
     const isPhantomInstalled = window.solana && window.solana.isPhantom;
     console.log("isPhantomInstalled: ", isPhantomInstalled);
 
     if(isPhantomInstalled) {
-      window.solana.on("connect", () => {
+      window.solana.on("connect", async () => {
         console.log("Connected to Phantom");
+        await updateConnectButton();
       });
     }
   }
 
-  async function connectPhantom() {
-    await window.solana.connect();
-    await setIsConnected(true);
+  async function updateConnectButton() {
     let publicAddress = window.solana.publicKey.toString();
     let truncatedAddress = publicAddress.substring(0,3);
     truncatedAddress = truncatedAddress + "..";
     let lastFewChars = publicAddress.substr(-2);
     truncatedAddress = truncatedAddress + lastFewChars;
     setConnectButtonText(truncatedAddress);
+    setIsConnected(true);
+
   }
+
+  async function connectPhantom() {
+    await window.solana.connect();
+  }
+
+  async function fetchUpdatedBuckets() {
+    
+  }
+
 
 
 
   useEffect(() => {
     async function performPreflight() {
+      await fetchUpdatedBuckets();
       await preflightUtils();
     }
 
@@ -76,6 +89,7 @@ export default function Home() {
       </div>
       
       <div className = {styles.mainContent}>
+        {mainContentView}
       </div>
       
 

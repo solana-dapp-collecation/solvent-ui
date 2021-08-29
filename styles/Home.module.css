@@ -7,8 +7,9 @@
 
 .navBar {
   margin-top: 2vh;
+  border-bottom: 1px solid rgba(234,234,234,0.25);
+  padding-bottom: 1vh;
   width: 100vw;
-  height: max(50px, 6vh);
   display: flex;
   flex-direction: row;
   /* background-color: #e33d3d; */
@@ -106,14 +107,18 @@
 
 .mainContent {
   width: 100vw;
-  height: 80vh;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00f99f;
   /* background-color: red; */
 }
 
 .footer {
   width: 100vw;
   height: max(25px, 4vh);
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid rgba(234,234,234,0.25);
   display: flex;
   justify-content: center;
   align-items: center;
