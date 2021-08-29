@@ -8,9 +8,10 @@ export default function Home() {
 
   const [isConnected, setIsConnected] = useState(false);
   const [connectButtonText, setConnectButtonText] = useState("Connect");
-  const [mainContentView, setMainContentView] = useState(<div className = {styles.mainContentView}>Nothing found here</div>)
-  
-  
+  const [mainContentViewIdentifier, setMainContentViewIdentifier] = useState(0);
+  const [mainContentView, setMainContentView] = useState(<></>);
+
+
   async function preflightUtils() {
     const isPhantomInstalled = window.solana && window.solana.isPhantom;
     console.log("isPhantomInstalled: ", isPhantomInstalled);
@@ -38,6 +39,23 @@ export default function Home() {
     await window.solana.connect();
   }
 
+  async function switchMainContentViewFromIdentifier() {
+    switch(mainContentViewIdentifier) {
+      case 0:
+        setMainContentView(<div className = {styles.base}>0</div>);
+        break;
+      case 1:
+        setMainContentView(<div className = {styles.base}>1</div>);
+        break;
+      case 2:
+        setMainContentView(<div className = {styles.base}>2</div>);
+        break;
+      default:
+        setMainContentView(<div className = {styles.base}>None</div>);
+
+    }
+  } 
+
   async function fetchUpdatedBuckets() {
     
   }
@@ -48,11 +66,12 @@ export default function Home() {
   useEffect(() => {
     async function performPreflight() {
       await fetchUpdatedBuckets();
+      await switchMainContentViewFromIdentifier();
       await preflightUtils();
     }
 
     performPreflight();
-  },[isConnected]);
+  },[isConnected, mainContentViewIdentifier]);
 
 
   return (
@@ -69,12 +88,33 @@ export default function Home() {
             <Image src = "/logomark_teal.png" alt="Solvent Protocol logo" width = {30} height = {40}/>
           </div>
         </div>
+
         <div className = {styles.navColumnTwo}>
-          <button className = {styles.createButton}>Create</button>
-          <button className = {styles.mintButton}>Mint</button>
+          <button
+            className = {styles.createButton}
+            onClick = {
+              () => {
+                setMainContentViewIdentifier(1);
+              }
+            }
+          >
+            Create
+          </button>
+
+          <button
+            className = {styles.mintButton}
+            onClick = {
+              () => {
+                setMainContentViewIdentifier(2);
+              }
+            }
+          >
+            Mint
+          </button>
         </div>
+
         <div className = {styles.navColumnThree}>
-          <button 
+          <button
             className = {styles.connectButton}
             onClick = {
               () => {
@@ -84,8 +124,8 @@ export default function Home() {
           >
             {connectButtonText}
           </button>
-
         </div>
+
       </div>
       
       <div className = {styles.mainContent}>
@@ -96,7 +136,7 @@ export default function Home() {
       <footer className={styles.footer}>
           Powered by{'  '}
           <span className={styles.logo}>
-            <Image src="/solana-logo.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={10} />
           </span>
       </footer>
     </div>
