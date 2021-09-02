@@ -1,6 +1,5 @@
 .tabsContainer {
     width: 100vw;
-    height: 85vh;
 }
 
 .tab {
@@ -21,4 +20,10 @@
     display: flex;
     justify-content: center;
     margin-top: 5vh;
+}
+
+.existingBucketsContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
 }

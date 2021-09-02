@@ -1,11 +1,27 @@
 .mainContainer {
-    width: calc(200px + 10vw);
+    width: calc(200px + 5vw);
     border-radius: 15px;
     color: #eaeaea;
     background-color: #222;
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     border: 1px solid rgba(234,234,234,0.05);
-    padding: 25px;
+    padding: 15px;
+    margin: 20px;
+}
+
+.mainContainer:hover {
+    background-color: #333;
+}
+
+.borderCircle {
+    border-radius: 9999px;
+}
+
+.bucketName {
+    font-family: Verdana;
+    color: #eaeaea;
+    font-size: calc(20px);
 }
