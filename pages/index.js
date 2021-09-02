@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react';
-import CreateBucket from '../components/CreateBucket/CreateBucket';
+import DropletWrapper from '../components/DropletWrapper/DropletWrapper';
+import BucketWrapper from '../components/BucketWrapper/BucketWrapper';
 import { useRouter } from 'next/router'
 
 export default function Home() {
@@ -46,10 +47,10 @@ export default function Home() {
         setMainContentView(<div className = {styles.base}>0</div>);
         break;
       case 1:
-        setMainContentView(<CreateBucket />);
+        setMainContentView(<BucketWrapper />);
         break;
       case 2:
-        setMainContentView(<div className = {styles.base}>2</div>);
+        setMainContentView(<DropletWrapper />);
         break;
       default:
         setMainContentView(<div className = {styles.base}>None</div>);
@@ -59,14 +60,20 @@ export default function Home() {
 
 
   useEffect(() => {
-    async function performPreflight() {
-      await switchMainContentViewFromIdentifier();
+    async function performTask() {
       await preflightUtils();
     }
 
-    performPreflight();
-  },[isConnected, mainContentViewIdentifier]);
+    performTask();
+  },[isConnected]);
 
+  useEffect(() => {
+    async function performTask() {
+      await switchMainContentViewFromIdentifier();
+    }
+    
+    performTask();
+  }, [mainContentViewIdentifier])
 
   return (
     <div className={styles.container}>
@@ -99,7 +106,7 @@ export default function Home() {
               }
             }
           >
-            Create
+            Buckets
           </button>
 
           <button
@@ -110,7 +117,7 @@ export default function Home() {
               }
             }
           >
-            Mint
+            Droplets
           </button>
         </div>
 
@@ -137,7 +144,7 @@ export default function Home() {
       <footer className={styles.footer}>
           Powered by{'  '}
           <span className={styles.logo}>
-            <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={12} />
+            <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={9} />
           </span>
       </footer>
     </div>
