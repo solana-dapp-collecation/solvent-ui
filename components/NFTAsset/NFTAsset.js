@@ -17,7 +17,7 @@ export default function NFTAsset(props) {
                     alt = {`${props.assetInfo.name}'s photo`}
                 />
             <span className = {styles.assetName} >{props.assetInfo.name}</span>
-            <span className = {styles.assetDropletPriceInfo} >{props.assetInfo.dropletPrice + " " + props.assetInfo.dropletId}</span>
+            <span className = {styles.assetDropletPriceInfo} >{props.dropletPrice + " " + props.dropletId}</span>
         </div>
     );
 }

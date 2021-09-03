@@ -1,5 +1,6 @@
 .mainContainer {
     width: 100vw;
+    background-color: #111;
 }
 
 .headerContainer {
@@ -7,7 +8,7 @@
     font-family: Verdana;
     font-size: 30px;
     color: #eaeaea;
-    border-bottom: 1px solid rgba(234,234,234,0.25);
+    border-bottom: 1px solid rgba(0,249,159,0.25);
     margin: 20px;
 }
 
@@ -22,24 +23,26 @@
 }
 
 .nftAssetsContainer {
-    width: 50vw;
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 20px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .mintAssetContainer {
-    width: 50vw;
-    background-color: yellow;
+    width: 50%;
+    /* background-color: yellow; */
     margin: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mintAssetForm {
     width: calc(200px + 10vw);
+    height: 180px;
     border-radius: 15px;
     color: #eaeaea;
     background-color: #222;
@@ -47,5 +50,84 @@
     flex-direction: column;
     align-items: center;
     border: 1px solid rgba(234,234,234,0.05);
-    padding: 25px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.mintAssetFormTitle {
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(234,234,234,0.5);
+}
+
+.mintAssetFormText {
+    margin-top: 15px;
+}
+
+.mintAssetFormButton {
+    width: calc(100px + 8vw);
+    height: calc(25px + 2vh);
+    color: #00f99f;
+    background-color: #222;
+    border: 1px solid #00f99f;
+    border-radius: 5px;
+    font-family: Verdana;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.mintAssetFormButton:hover {
+    box-shadow: none;
+    background-color: #00f99f;
+    color: #111;
+}
+
+.redeemAssetContainer {
+    width: 50%;
+    /* background-color: yellow; */
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.redeemAssetForm {
+    width: calc(200px + 10vw);
+    height: 150px;
+    border-radius: 15px;
+    color: #eaeaea;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(234,234,234,0.05);
+    padding: 10px;
+    margin: 20px;
+}
+
+.redeemAssetFormTitle {
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(234,234,234,0.5);
+}
+
+.redeemAssetFormText {
+    margin-top: 15px;
+}
+
+.redeemAssetFormButton {
+    width: calc(100px + 8vw);
+    height: calc(25px + 2vh);
+    color: #00f99f;
+    background-color: #222;
+    border: 1px solid #00f99f;
+    border-radius: 5px;
+    font-family: Verdana;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.redeemAssetFormButton:hover {
+    box-shadow: none;
+    background-color: #00f99f;
+    color: #111;
 }

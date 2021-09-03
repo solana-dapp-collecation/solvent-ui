@@ -1,6 +1,7 @@
 import { loadAssets } from '../../lib/utils';
 import NFTAsset from '../../components/NFTAsset/NFTAsset';
 import styles from '../../styles/NFTProject.module.css';
+
 import Link from 'next/link'
 
 export async function getServerSideProps(context) {
@@ -16,11 +17,12 @@ export async function getServerSideProps(context) {
   }
 
 export default function NFTProject(props) {
+    console.log("props: ", props.projectInfo)
     return(
         <div className = {styles.mainContainer}>
             <div className={styles.backToHome}>
                 <Link href="/">
-                    <a>← Back to home</a>
+                    <span>← Back to home</span>
                 </Link>
             </div>
             <div className = {styles.headerContainer}>
@@ -28,19 +30,47 @@ export default function NFTProject(props) {
             </div>
             <div className = {styles.mainBodyContainer}>
                 <div className = {styles.nftAssetsContainer}>
+                    
                     {
                         props.projectInfo.assets.map((row,i) => {
                             return (
-                                <NFTAsset key = {i} assetInfo = {row} />
+                                <NFTAsset key = {i} assetInfo = {row} dropletId = {props.projectInfo.dropletId} dropletPrice = {props.projectInfo.dropletPrice}/>
                             );
                         })
                     }
                 </div>
-                <div className = {styles.mintAssetContainer}>
-                    <div className = {styles.mintAssetForm}>
-                        
-                    </div>
-                </div>
+                {
+                    props.projectInfo.id === "auroryproject"
+                    ?
+                        <div className = {styles.mintAssetContainer}>
+                            <div className = {styles.mintAssetForm}>
+                                <span className = {styles.mintAssetFormTitle}>MINT {props.projectInfo.dropletId}</span>
+                                <span className = {styles.mintAssetFormText}>You own: Aurorian #10001</span>
+                                <span className = {styles.mintAssetFormText}>You receive: {props.projectInfo.dropletPrice + " " + props.projectInfo.dropletId}</span>
+                                <button disabled = {true} className = {styles.mintAssetFormButton}>MINT {props.projectInfo.dropletId}</button>
+                            </div>
+                            <div className = {styles.redeemAssetForm}>
+                                <span className = {styles.redeemAssetFormTitle}>Redeem {props.projectInfo.dropletId}</span>
+                                <span className = {styles.redeemAssetFormText}>You don't own any {props.projectInfo.dropletId}</span>
+                                <button disabled = {true} className = {styles.redeemAssetFormButton}>Redeem {props.projectInfo.dropletId} on Serum</button>
+                            </div>
+                        </div>
+                    :
+                        <div className = {styles.mintAssetContainer}>
+                            <div className = {styles.mintAssetForm}>
+                                <span className = {styles.mintAssetFormTitle}>MINT {props.projectInfo.dropletId}</span>
+                                <span className = {styles.mintAssetFormText}>You don't own any NFT's of this project</span>
+                                <span className = {styles.mintAssetFormText}>You receive: - </span>
+                                <button disabled = {true} className = {styles.mintAssetFormButton}>MINT {props.projectInfo.dropletId}</button>
+                            </div>
+                            <div className = {styles.redeemAssetForm}>
+                                <span className = {styles.redeemAssetFormTitle}>Redeem {props.projectInfo.dropletId}</span>
+                                <span className = {styles.redeemAssetFormText}>You own 11.42 {props.projectInfo.dropletId}</span>
+                                <button disabled = {true} className = {styles.redeemAssetFormButton}>Redeem {props.projectInfo.dropletId} on Serum</button>
+                            </div>
+                        </div>
+
+                }
             </div>
 
         </div>
