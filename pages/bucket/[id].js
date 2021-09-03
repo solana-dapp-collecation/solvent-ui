@@ -80,8 +80,8 @@ export default function NFTProject(props) {
                             <div className = {styles.mintAssetContainer}>
                                 <div className = {styles.mintAssetForm}>
                                     <span className = {styles.mintAssetFormTitle}>MINT {props.projectInfo.dropletId}</span>
-                                    <span className = {styles.mintAssetFormText}>You don't own any NFT's of this project</span>
-                                    <span className = {styles.mintAssetFormText}>You'll receive: - </span>
+                                    <span className = {styles.mintAssetFormText}>You don&apos;t own any NFT&apos;s of this project</span>
+                                    <span className = {styles.mintAssetFormText}>You&apos;ll receive: - </span>
                                     <button disabled = {true} className = {styles.mintAssetFormButton}>MINT {props.projectInfo.dropletId}</button>
                                 </div>
                                 <div className = {styles.redeemAssetForm}>
