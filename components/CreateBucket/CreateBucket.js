@@ -1,6 +1,13 @@
 import styles from './CreateBucket.module.css';
+import { useRouter } from 'next/router';
 
 export default function CreateBucket() {
+    const router = useRouter();
+
+    function goHome() {
+        router.push(`/`);
+    }
+
     return (
         <div className = {styles.formContainer}>
             <span className = {styles.createBucketText}>Create Solvent Bucket</span>
@@ -11,7 +18,15 @@ export default function CreateBucket() {
                 <br />
                 <input className = {styles.bucketSymbolInput} name = "bucketSymbol" type = "text" placeholder = "Bucket symbol"/>
                 <br />
-                <button className = {styles.createBucketButton} type = "submit">Create Bucket</button>
+                <button
+                    className = {styles.createBucketButton}
+                    onClick = {
+                        () => {
+                            goHome()
+                        }
+                    }
+                    type = "submit"
+                >Create Bucket</button>
             </form>
         </div>
     );
