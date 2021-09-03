@@ -58,6 +58,7 @@ export default function NFTProject(props) {
                                 <span className = {styles.redeemAssetFormTitle}>Redeem {props.projectInfo.dropletId}</span>
                                 <span className = {styles.redeemAssetFormText}>You don&apos;t own any {props.projectInfo.dropletId}</span>
                                 <button disabled = {true} className = {styles.redeemAssetFormButton}>Redeem {props.projectInfo.dropletId} on Serum</button>
+                                <button disabled = {true} className = {styles.redeemAssetFormButton}>Choose one from inventory</button>
                             </div>
                         </div>
                     :
@@ -74,6 +75,7 @@ export default function NFTProject(props) {
                                     <span className = {styles.redeemAssetFormTitle}>Redeem {props.projectInfo.dropletId}</span>
                                     <span className = {styles.redeemAssetFormText}>You own 11.42 {props.projectInfo.dropletId}</span>
                                     <button disabled = {true} className = {styles.redeemAssetFormButton}>Redeem {props.projectInfo.dropletId} on Serum</button>
+                                    <button disabled = {true} className = {styles.redeemAssetFormButton}>Choose one from inventory</button>
                                 </div>
                             </div>
                         :
@@ -88,6 +90,7 @@ export default function NFTProject(props) {
                                     <span className = {styles.redeemAssetFormTitle}>Redeem {props.projectInfo.dropletId}</span>
                                     <span className = {styles.redeemAssetFormText}>You own 0 {props.projectInfo.dropletId}</span>
                                     <button disabled = {true} className = {styles.redeemAssetFormButton}>Redeem {props.projectInfo.dropletId} on Serum</button>
+                                    <button disabled = {true} className = {styles.redeemAssetFormButton}>Choose one from inventory</button>
                                 </div>
                             </div>
 
