@@ -4,7 +4,7 @@
 
 Solvent helps you with access to DeFi services using your NFTs so that your JPEG sitting in your wallet can be more useful than just for your Twitter/Discord PFP.
 
-You deposit your NFT in a Solvent "bucket" in exchange of "droplets" that have 1:1 claim over similar NFT in that collection.
+You deposit your NFT in a Solvent "bucket" in exchange of "droplets" that you can either use to swap for another NFT or cash out on Serum.
 
  - Discover better floor prices for your NFTs and cash out using pools on Serum.
  - Trading your SolPunk for another SolPunk made easy.
