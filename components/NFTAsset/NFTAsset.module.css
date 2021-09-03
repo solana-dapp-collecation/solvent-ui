@@ -17,17 +17,17 @@
 }
 
 .borderCircle {
-    border-radius: 9999px;
+    border-radius: 10px;
 }
 
-.bucketName {
+.assetName {
     font-family: Verdana;
     color: #eaeaea;
     font-size: calc(20px);
     margin-top: 15px;
 }
 
-.bucketDropletID {
+.assetDropletPriceInfo {
     font-family: Verdana;
     color: #eaeaea;
     font-size: calc(18px);

@@ -5,15 +5,13 @@ import { useEffect, useState } from 'react';
 import DropletWrapper from '../components/DropletWrapper/DropletWrapper';
 import BucketWrapper from '../components/BucketWrapper/BucketWrapper';
 import { useRouter } from 'next/router'
-import { loadAuroriansInfo, loadExistingBuckets } from '../lib/utils';
+import { loadExistingBuckets } from '../lib/utils';
 
 export async function getStaticProps() {
   const existingBuckets = await loadExistingBuckets();
-  const auroriansInfo = await loadAuroriansInfo();
   return {
     props: {
       existingBuckets: {...existingBuckets},
-      auroriansInfo: {...auroriansInfo},
     }
   }
 }

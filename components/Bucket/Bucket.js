@@ -23,12 +23,12 @@ export default function Bucket(props) {
                     priority
                     src = {props.bucketInfo.photo}
                     className = {styles.borderCircle}
-                    height = {200}
-                    width = {200}
+                    height = {160}
+                    width = {160}
                     alt = {`${props.bucketInfo.name}'s photo`}
                 />
-            <p className = {styles.bucketName} >{props.bucketInfo.name}</p>
-            <p className = {styles.bucketDropletID} >{props.bucketInfo.dropletId}</p>
+            <span className = {styles.bucketName} >{props.bucketInfo.name}</span>
+            <span className = {styles.bucketDropletID} >{props.bucketInfo.dropletId}</span>
         </div>
     );
 }

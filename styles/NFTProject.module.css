@@ -1,0 +1,25 @@
+.mainContainer {
+    width: 100vw;
+}
+
+.headerContainer {
+    height: 50px;
+    font-family: Verdana;
+    font-size: 30px;
+    color: #eaeaea;
+    border-bottom: 1px solid rgba(234,234,234,0.25);
+    margin: 20px;
+}
+
+.backToHome {
+    margin: 20px 20px 0;
+    color: #00f99f;
+}
+
+.nftAssetsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
