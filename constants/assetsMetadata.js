@@ -9,6 +9,34 @@ export const ASSETS_METADATA = [
                 photo: "/auroryproject/aurorian8488.png",
                 dropletId: "$AUR",
                 dropletPrice: "1.55"
+            },
+            {
+                name: "Aurorian #8488",
+                id: "aurorian8488",
+                photo: "/auroryproject/aurorian8488.png",
+                dropletId: "$AUR",
+                dropletPrice: "1.55"
+            },
+            {
+                name: "Aurorian #8488",
+                id: "aurorian8488",
+                photo: "/auroryproject/aurorian8488.png",
+                dropletId: "$AUR",
+                dropletPrice: "1.55"
+            },
+            {
+                name: "Aurorian #8488",
+                id: "aurorian8488",
+                photo: "/auroryproject/aurorian8488.png",
+                dropletId: "$AUR",
+                dropletPrice: "1.55"
+            },
+            {
+                name: "Aurorian #8488",
+                id: "aurorian8488",
+                photo: "/auroryproject/aurorian8488.png",
+                dropletId: "$AUR",
+                dropletPrice: "1.55"
             }
         ],
     },

@@ -24,6 +24,7 @@
 
 .existingBucketsContainer {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     padding: 10px;
 }

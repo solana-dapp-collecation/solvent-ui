@@ -26,15 +26,23 @@ export default function NFTProject(props) {
             <div className = {styles.headerContainer}>
                 <span className = {styles.headerTitle} >{props.projectInfo.name}</span>
             </div>
-            <div className = {styles.nftAssetsContainer}>
-                {
-                    props.projectInfo.assets.map((row,i) => {
-                        return (
-                            <NFTAsset key = {i} assetInfo = {row} />
-                        );
-                    })
-                }
+            <div className = {styles.mainBodyContainer}>
+                <div className = {styles.nftAssetsContainer}>
+                    {
+                        props.projectInfo.assets.map((row,i) => {
+                            return (
+                                <NFTAsset key = {i} assetInfo = {row} />
+                            );
+                        })
+                    }
+                </div>
+                <div className = {styles.mintAssetContainer}>
+                    <div className = {styles.mintAssetForm}>
+                        
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }
