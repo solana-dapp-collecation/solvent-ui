@@ -19,8 +19,6 @@ export default function Home(props) {
 
   const [isConnected, setIsConnected] = useState(false);
   const [connectButtonText, setConnectButtonText] = useState("Connect");
-  const [mainContentViewIdentifier, setMainContentViewIdentifier] = useState(1);
-  const [mainContentView, setMainContentView] = useState(<></>);
   const router = useRouter();
 
   async function preflightUtils() {
@@ -50,22 +48,7 @@ export default function Home(props) {
     await window.solana.connect();
   }
 
-  async function switchMainContentViewFromIdentifier() {
-    switch(mainContentViewIdentifier) {
-      case 0:
-        setMainContentView(<div className = {styles.base}>0</div>);
-        break;
-      case 1:
-        setMainContentView(<BucketWrapper existingBuckets = {props.existingBuckets}/>);
-        break;
-      case 2:
-        setMainContentView(<DropletWrapper />);
-        break;
-      default:
-        setMainContentView(<div className = {styles.base}>None</div>);
-
-    }
-  }
+  
 
 
   useEffect(() => {
@@ -76,13 +59,7 @@ export default function Home(props) {
     performTask();
   },[isConnected]);
 
-  useEffect(() => {
-    async function performTask() {
-      await switchMainContentViewFromIdentifier();
-    }
-    
-    performTask();
-  }, [mainContentViewIdentifier])
+  
 
   return (
     <div className={styles.container}>
