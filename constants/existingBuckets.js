@@ -10,5 +10,11 @@ export const EXISTING_BUCKETS = [
         id: "degenapeacademy",
         photo: "/buckets/degenapeacademy.png",
         dropletId: "$DAPE"
+    },
+    {
+        name: "SolPunks",
+        id: "solpunks",
+        photo: "/buckets/solpunks.png",
+        dropletId: "$SPUNK"
     }
 ];

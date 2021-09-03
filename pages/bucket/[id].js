@@ -28,6 +28,11 @@ export default function NFTProject(props) {
             <div className = {styles.headerContainer}>
                 <span className = {styles.headerTitle} >{props.projectInfo.name}</span>
             </div>
+            <div
+                className = {styles.solventInventoryText}
+            >
+                Solvent Inventory
+            </div>
             <div className = {styles.mainBodyContainer}>
                 <div className = {styles.nftAssetsContainer}>
                     
@@ -46,7 +51,7 @@ export default function NFTProject(props) {
                             <div className = {styles.mintAssetForm}>
                                 <span className = {styles.mintAssetFormTitle}>MINT {props.projectInfo.dropletId}</span>
                                 <span className = {styles.mintAssetFormText}>You own: Aurorian #10001</span>
-                                <span className = {styles.mintAssetFormText}>You receive: {props.projectInfo.dropletPrice + " " + props.projectInfo.dropletId}</span>
+                                <span className = {styles.mintAssetFormText}>You'll receive: {props.projectInfo.dropletPrice + " " + props.projectInfo.dropletId}</span>
                                 <button disabled = {true} className = {styles.mintAssetFormButton}>MINT {props.projectInfo.dropletId}</button>
                             </div>
                             <div className = {styles.redeemAssetForm}>
@@ -60,7 +65,7 @@ export default function NFTProject(props) {
                             <div className = {styles.mintAssetForm}>
                                 <span className = {styles.mintAssetFormTitle}>MINT {props.projectInfo.dropletId}</span>
                                 <span className = {styles.mintAssetFormText}>You don't own any NFT's of this project</span>
-                                <span className = {styles.mintAssetFormText}>You receive: - </span>
+                                <span className = {styles.mintAssetFormText}>You'll receive: - </span>
                                 <button disabled = {true} className = {styles.mintAssetFormButton}>MINT {props.projectInfo.dropletId}</button>
                             </div>
                             <div className = {styles.redeemAssetForm}>

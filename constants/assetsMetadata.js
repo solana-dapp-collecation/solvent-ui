@@ -59,6 +59,28 @@ export const ASSETS_METADATA = [
         ],
         dropletId: "$DAPE",
         dropletPrice: "3.07"
-
+    },
+    {
+        id: "solpunks",
+        name: "SolPunks",
+        assets: [
+                {
+                    name: "SolPunk #7468",
+                    id: "solpunk5924",
+                    photo: "/solpunks/solpunk5924.png"
+                },
+                {
+                    name: "SolPunk #7252",
+                    id: "solpunk7252",
+                    photo: "/solpunks/solpunk7252.png"
+                },
+                {
+                    name: "SolPunk #7804",
+                    id: "solpunk7804",
+                    photo: "/solpunks/solpunk7804.png"
+                }
+        ],
+        dropletId: "$SPUNK",
+        dropletPrice: "0.98"
     }
 ]

@@ -28,6 +28,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: 20px;
+    border-right: 1px solid rgba(234,234,234,0.05);
     /* background-color: red; */
 }
 
@@ -130,4 +131,9 @@
     box-shadow: none;
     background-color: #00f99f;
     color: #111;
+}
+
+.solventInventoryText {
+    color: #eaeaea;
+    margin-left: 20px;;
 }

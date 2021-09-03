@@ -20,7 +20,7 @@ export default function Home(props) {
 
   const [isConnected, setIsConnected] = useState(false);
   const [connectButtonText, setConnectButtonText] = useState("Connect");
-  const [mainContentViewIdentifier, setMainContentViewIdentifier] = useState(0);
+  const [mainContentViewIdentifier, setMainContentViewIdentifier] = useState(1);
   const [mainContentView, setMainContentView] = useState(<></>);
   const router = useRouter();
 
@@ -108,27 +108,7 @@ export default function Home(props) {
         </div>
 
         <div className = {styles.navColumnTwo}>
-          <button
-            className = {styles.createButton}
-            onClick = {
-              () => {
-                setMainContentViewIdentifier(1);
-              }
-            }
-          >
-            Buckets
-          </button>
-
-          <button
-            className = {styles.mintButton}
-            onClick = {
-              () => {
-                setMainContentViewIdentifier(2);
-              }
-            }
-          >
-            Droplets
-          </button>
+         
         </div>
 
         <div className = {styles.navColumnThree}>
@@ -147,7 +127,7 @@ export default function Home(props) {
       </div>
       
       <div className = {styles.mainContent}>
-        {mainContentView}
+        <BucketWrapper existingBuckets = {props.existingBuckets}/>)
       </div>
       
 
