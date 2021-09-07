@@ -115,6 +115,7 @@
 
 .footer {
   width: 100vw;
+  font-size: 14px;
   height: max(25px, 4vh);
   border-top: 1px solid rgba(234,234,234,0.25);
   display: flex;
@@ -130,6 +131,7 @@
 
 .logo {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 
