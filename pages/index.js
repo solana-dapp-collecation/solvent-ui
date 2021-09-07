@@ -108,11 +108,10 @@ export default function Home(props) {
       
 
       <footer className={styles.footer}>
-          Backed by{'  '}
+          Powered by{'  '}
           <span className={styles.logo}>
             <Image src="/solana-logo.png" alt="Vercel Logo" width={72} height={9} />
           </span>
-          {'  '}Foundation
       </footer>
     </div>
   )
